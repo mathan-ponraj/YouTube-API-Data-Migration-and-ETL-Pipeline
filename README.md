@@ -26,7 +26,7 @@ Demonstrates end-to-end data engineering skills, including API ingestion, data t
 
 ---
 
-## How I Did It (STAR Format)
+## How I Did It
 
 **Situation**  
 Raw YouTube trending data is API-driven, inconsistent, and not analysis-ready.
