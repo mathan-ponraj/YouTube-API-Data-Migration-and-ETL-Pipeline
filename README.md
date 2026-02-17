@@ -1,72 +1,64 @@
-# YouTube Trending Data Pipeline and Analytics
+# YouTube Trending Data ETL using Python, SQLAlchemy and SQLite
 
-## Case Study
+## General info  
+The project includes an end-to-end ETL (Extract, Transform, Load) process using Python, SQLAlchemy, and SQLite to collect and analyze trending YouTube video data.  
+This ETL workflow automatically extracts data from the YouTube Data API, transforms raw JSON data into a clean and structured format, and loads it into a SQLite database for SQL-based analysis.  
 
-**Problem**  
-Trending YouTube data is dynamic, unstructured, and difficult to analyze without an automated pipeline. Manual analysis does not scale and limits insights into views, likes, and engagement patterns.
+ETL stands for Extract, Transform, and Load and it is a fundamental workflow in data engineering. The purpose of ETL is to collect data from external sources, clean and transform it, and store it in a database for analysis and reporting.  
 
-**Context**  
-This project simulates a real-world data engineering workflow by collecting live data from the YouTube Data API, transforming it, storing it in a relational database, and performing SQL-based analytics.
+## Dataset  
+The dataset is generated dynamically using the YouTube Data API and contains information about trending videos such as:  
+- Video title  
+- Channel name  
+- Views  
+- Likes  
+- Comments  
+- Publish date  
+- Engagement metrics  
 
-**Impact**  
-The pipeline enables repeatable, query-ready analytics on trending YouTube videos, supporting insights such as top-performing content, channel dominance, and engagement efficiency.
+The processed data is stored in CSV format and in a SQLite database (`youtube_trending.db`).  
 
-**Why It Matters**  
-Demonstrates end-to-end data engineering skills, including API ingestion, data transformation, database design, and analytical querying.
+## Project includes  
+ETL scripts for data extraction, transformation, and loading  
+Main execution script to run the complete ETL workflow  
+SQLite database for storing transformed data  
+SQLAlchemy for database connection and loading  
+Automated data collection and analytics process  
 
----
+## Summary  
+The project consists of classical ETL steps:
 
-## What I Did
+### 1. Extract:  
+This stage is used to extract data from the YouTube Data API.  
+I used Python to fetch trending video data and converted the API response into Pandas DataFrames for further processing.  
 
-- Built an automated data ingestion pipeline using the YouTube Data API
-- Cleaned and transformed raw API data into analytics-ready format
-- Designed and populated a SQLite database
-- Performed SQL-based exploratory and analytical queries
-- Exported analytical outputs for downstream reporting
+### 2. Transform:  
+This stage is used to clean and transform the raw data.  
+In this step I have:  
+- Handled missing and inconsistent values  
+- Removed duplicate records  
+- Converted data types for analysis  
+- Created new features like engagement rate (likes per views)  
+- Structured the dataset into analysis-ready format  
 
----
+### 3. Load:  
+The final stage is used to load the transformed data into the database.  
+I used SQLite database with SQLAlchemy engine to store the cleaned dataset into relational tables, making the data query-ready for SQL analysis and reporting.  
 
-## How I Did It
+## Technologies  
+Project is created with:  
+- Python 3  
+- SQL (SQLite)  
+- SQLAlchemy  
+- Pandas, NumPy  
+- YouTube Data API  
 
-**Situation**  
-Raw YouTube trending data is API-driven, inconsistent, and not analysis-ready.
+## Running the project  
+To run the complete ETL workflow:
 
-**Task**  
-Design a scalable pipeline to collect, clean, store, and analyze trending video data.
+```bash
+python main.py
+```
+## About
 
-**Action**  
-- Integrated YouTube Data API using Python
-- Implemented data transformation and deduplication using Pandas
-- Loaded cleaned data into SQLite for structured querying
-- Wrote optimized SQL queries for engagement and performance analysis
-- Modularized the pipeline into ingestion, transformation, loading, and analytics scripts
-
-**Result**  
-- Fully automated ETL pipeline
-- Query-ready relational database
-- Actionable insights on views, likes, and engagement ratios
-- Reusable architecture adaptable to other APIs or regions
-
----
-
-## Tech Stack
-
-- Programming Language: Python  
-- APIs: YouTube Data API v3  
-- Data Processing: Pandas, NumPy  
-- Database: SQLite  
-- Querying: SQL  
-- Configuration Management: Environment Variables  
-- Storage: CSV, SQLite  
-
----
-
-## Key Results / Business Impact
-
-- Automated collection of trending YouTube videos by region
-- Reduced manual data handling through ETL automation
-- Enabled ranking of videos and channels by:
-  - Total views
-  - Total likes
-  - Engagement rate (likes per view)
-- Produced exportable analytics datasets for reporting and dashboards
+An end-to-end YouTube Trending Data ETL project that demonstrates API data extraction, data transformation with pandas, and database loading using SQLAlchemy, along with SQL-based analytics for real-world data engineering and data analyst use cases.
