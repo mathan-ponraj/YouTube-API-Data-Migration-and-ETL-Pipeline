@@ -1,4 +1,4 @@
-# YouTube Data Migration and ETL Pipeline
+# YouTube Trending Videos Analytics
 
 ## Project Overview
 This project is an automated ETL (Extract, Transform, Load) system designed to migrate data from the YouTube Data API into a structured SQL environment. I built this to solve the challenge of handling large-scale, nested JSON responses and converting them into high-quality, query-ready data for business analysis.
